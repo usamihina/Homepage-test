@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>宇佐美ひなのアトリエ</title>
+  <title>宇佐美ひなのアトリエ - Atelier Hina</title>
   <style>
-    /* シンプルで清潔感のあるデザイン設定 */
+    /* 全ページ共通のデザイン設定 */
     :root {
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --text-main: #0f172a;
       --text-sub: #475569;
       --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -30,7 +31,13 @@
       border-bottom: 1px solid #e2e8f0;
     }
     h1 { margin: 0; font-size: 1.8rem; }
-    h2 { font-size: 1.4rem; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 0.3rem; margin-top: 2rem; }
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
     .card {
       background: var(--card-bg);
       padding: 1.5rem;
@@ -38,17 +45,48 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       margin-top: 1rem;
     }
-    .tag {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #3730a3;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      margin-right: 0.5rem;
+    
+    /* 🌟 トップページ専用のスタイル */
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
     }
+    .hero h2 {
+      border: none;
+      color: white;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    .hero p {
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--accent-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #f1f5f9;
+      text-decoration: none;
+    }
+
     a { color: var(--accent-color); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    nav a { margin-right: 15px; }
   </style>
 </head>
 <body>
@@ -56,60 +94,44 @@
   <header>
     <h1>宇佐美ひなのアトリエ</h1>
     <p>ゲーム開発 & 制作の学生</p>
-    <!-- ページ移動用のメニュー -->
-  <nav style="margin-top: 1rem;">
-    <a href="index.html" style="margin-right: 15px;">Home</a>
-    <a href="about.html" style="margin-right: 15px;">Profile</a>
-    <a href="works.html" style="margin-right: 15px;">Works</a>
-    <a href="diary.html">Diary</a>
-  </nav>
+
+    <!-- メニューバー -->
+    <nav style="margin-top: 1rem;">
+      <a href="index.html" style="font-weight: bold;">Home</a>
+      <a href="about.html">Profile</a>
+      <a href="works.html">Works</a>
+      <a href="diary.html">Diary</a>
+    </nav>
   </header>
 
   <main>
-    <!-- 1. 自己紹介 -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="card">
-        <p>はじめまして！大学で情報系や工学について学んでいます。</p>
-        <p>ゲームやエンタメ系が好きで、日々エンタメの分析や制作に取り組んでいます。</p>
+    <!-- 1. ヒーローセクション（ウェルカムエリア） -->
+    <section class="hero">
+      <h2>Welcome to Atelier Hina 👋</h2>
+      <p>ゲーム開発やWeb制作、日々の学びや分析、制作記録をまとめている個人ポートフォリオサイトです。</p>
+      <div class="btn-group">
+        <a href="about.html" class="btn">プロフィールを見る →</a>
+        <a href="works.html" class="btn" style="background: rgba(255,255,255,0.2); color: white;">制作物一覧 →</a>
       </div>
     </section>
 
-    <!-- 2. 制作物 -->
-    <section id="works">
-      <h2>Works</h2>
+    <!-- 2. ピックアップ（おすすめコンテンツ） -->
+    <section>
+      <h2>Pick Up</h2>
       <div class="card">
-        <h3>個人ポートフォリオサイト（当サイト）</h3>
-        <p>自分の制作物や活動記録をまとめるために作成したポートフォリオサイトです。</p>
-        <div>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Git</span>
-          <span class="tag">Vercel</span>
-        </div>
-        <p><a href="https://github.com/usamihina/Homepage-test" target="_blank">GitHubでソースコードを見る →</a></p>
+        <h3>🚀 個人ポートフォリオサイトを開設しました</h3>
+        <p>HTML/CSS、Git/GitHub、Vercelを使って自分だけのWebサイトを構築しました。今後の制作物や日記を随時更新していきます！</p>
+        <p><a href="works.html">詳細を見る →</a></p>
       </div>
     </section>
 
-    <!-- 3. スキル -->
-    <section id="skills">
-      <h2>Skills</h2>
+    <!-- 3. 最新の更新 / 近況（Recent） -->
+    <section>
+      <h2>Latest Activity</h2>
       <div class="card">
         <ul>
-          <li><strong>Languages:</strong> HTML, CSS, JavaScript (学習中)</li>
-          <li><strong>Tools & Services:</strong> Git, GitHub, VS Code, Vercel , Aviutl2 ,YMM4</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 4. 連絡先 -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>ご連絡やお問合せは以下からお願いいたします。</p>
-        <ul>
-          <li>GitHub: <a href="https://github.com/usamihina" target="_blank">@usamihina</a></li>
-          <li>X (Twitter): <a href="https://x.com/UsamiH1na" target="_blank">@UsamiH1na</a></li> 
+          <li><strong>2026.08.04:</strong> ポートフォリオサイト（Atelier Hina）を公開！</li>
+          <li><strong>2026.08.04:</strong> Profile / Works / Diary ページを開設</li>
         </ul>
       </div>
     </section>
@@ -117,7 +139,7 @@
 
   <footer>
     <p style="text-align: center; color: var(--text-sub); font-size: 0.9rem;">
-      &copy; 2026 usamihina. All rights reserved.
+      &copy; 2026 Atelier Hina. All rights reserved.
     </p>
   </footer>
 
