@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me </title>
+  <style>
+    /* 全ページ共通のデザイン設定 */
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+      --accent-color: #2563eb;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header, main, footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    h1 { margin: 0; font-size: 1.8rem; }
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    /* プロフィール用のレイアウト設定 */
+    .profile-meta {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .profile-meta dt {
+      font-weight: bold;
+      color: var(--text-sub);
+    }
+    .profile-meta dd {
+      margin: 0;
+    }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav a { margin-right: 15px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>宇佐美ひなのアトリエ</h1>
+    <p>ゲーム開発 & 制作の学生</p>
+
+    <!-- メニューバー -->
+    <nav style="margin-top: 1rem;">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="font-weight: bold;">Profile</a>
+      <a href="works.html">Works</a>
+      <a href="diary.html">Diary</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Me (自己紹介)</h2>
+
+    <!-- メインのプロフィールカード -->
+    <div class="card">
+      <h3>宇佐美 ひな (Usami Hina)</h3>
+      <p>東京の某国立大学で情報系や工学系を学んでいます。エンタメ・ゲームの分析や制作に取り組むのが好きです！</p>
+      
+      <!-- 表形式っぽく見せるプロフィール項目 -->
+      <dl class="profile-meta">
+        <dt>所属</dt>
+        <dd>東京の某国立大学</dd>
+        <dt>興味分野</dt>
+        <dd>ゲーム制作 / プログラミング / CGデザイン</dd>
+        
+        <dt>趣味</dt>
+        <dd>ゲーム、アニメ</dd>
+      </dl>
+    </div>
+
+    <!-- 自由に文章を書くセクション -->
+    <section>
+      <h2>Interests & Focus</h2>
+      
+      <div class="card">
+        <h3>💻 学習中のこと・挑戦したいこと</h3>
+        <p>現在はHTML/CSSやGit/GitHubを使った基本的なWebサイト制作の知識を深めています。今後はJavaScriptやモダンな（AstroやNext.jsなど）を使ったWeb開発にもチャレンジしていきたいです。ゲーム制作に熱血したいです！！</p>
+      </div>
+
+      <div class="card">
+        <h3>🎮 好きなゲーム</h3>
+        <p>アトリエシリーズ-ライザのアトリエからプレイし始めて、錬金術を駆使して攻略していくゲーム性やそのゲームバランス、シナリオに魅力を感じています。</p>
+        <p>リズムゲー-プロジェクトセカイからリズムゲーを触り始めて今では東方ダンマクカグラやアーケードのチュウニズムなどをプレイしています。</p>
+      </div>
+    </section>
+
+    <!-- SNS・リンク一覧 -->
+    <section>
+      <h2>Links</h2>
+      <div class="card">
+        <ul>
+          <li>GitHub: <a href="https://github.com/usamihina" target="_blank">@usamihina</a></li>
+          <li>X (Twitter): <a href="https://x.com/UsamiH1na" target="_blank">@UsamiH1na</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: center; color: var(--text-sub); font-size: 0.9rem;">
+      &copy; 2026 Atelier Hina. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
