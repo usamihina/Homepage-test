@@ -138,6 +138,24 @@
   </main>
 
   <footer>
+    <!-- アクセスカウンター表示部分 -->
+<div style="text-align: center; margin-top: 1rem; color: var(--text-sub); font-size: 0.9rem;">
+   累計アクセス数: <span id="visit-count" style="font-weight: bold; color: var(--accent-color);">--</span> 回
+</div>
+
+<!-- カウントを取得・加算するJavaScript -->
+<script>
+  // 'atelier-hina' という名前のカウンターに1加算してデータを取得
+  fetch('https://api.counterapi.dev/v1/atelier-hina-site/visits/up')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visit-count').textContent = data.count.toLocaleString();
+    })
+    .catch(error => {
+      // エラー時はハイフン表示
+      document.getElementById('visit-count').textContent = '1';
+    });
+</script>
     <p style="text-align: center; color: var(--text-sub); font-size: 0.9rem;">
       &copy; 2026 Atelier Hina. All rights reserved.
     </p>
