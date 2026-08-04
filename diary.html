@@ -43,7 +43,37 @@
       border-radius: 8px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       margin-top: 1rem;
+      transition: all 0.3s ease; /* 表示切り替え時のアニメーション */
     }
+
+    /* 🏷️ 絞り込みボタンのデザイン */
+    .filter-container {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: #e2e8f0;
+      color: var(--text-main);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .filter-btn:hover {
+      background: #cbd5e1;
+    }
+    /* 選択中のボタンの見た目 */
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    /* タグのデザイン */
     .tag {
       display: inline-block;
       background: #e0e7ff;
@@ -53,10 +83,13 @@
       font-size: 0.85rem;
       margin-right: 0.5rem;
     }
-    /* 外部サイト（note等）用タグ */
     .tag-note {
       background: #dcfce7;
       color: #166534;
+    }
+    .tag-game {
+      background: #fef3c7;
+      color: #92400e;
     }
     .date {
       font-size: 0.85rem;
@@ -74,7 +107,6 @@
     <h1>宇佐美ひなのアトリエ</h1>
     <p>ゲーム開発 & 制作の学生</p>
 
-    <!-- メニューバー -->
     <nav style="margin-top: 1rem;">
       <a href="index.html">Home</a>
       <a href="about.html">Profile</a>
@@ -85,39 +117,48 @@
 
   <main>
     <h2>Diary & Articles (日記・記事)</h2>
-    <p style="color: var(--text-sub);">日々の制作記録やイベント参加レポート、noteに書いた記事などをまとめています。</p>
+    <p style="color: var(--text-sub);">日々の制作記録やイベント参加レポート、noteの記事をまとめています。</p>
 
-    <!-- 記事1：note記事のサンプル（外部リンク） -->
-    <article class="card">
+    <!-- 🔍 絞り込みボタンエリア -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">すべて</button>
+      <button class="filter-btn" data-filter="game">ゲーム分析</button>
+      <button class="filter-btn" data-filter="note">note</button>
+      <button class="filter-btn" data-filter="web">Web制作</button>
+      <button class="filter-btn" data-filter="event">イベント</button>
+    </div>
+
+    <!-- 記事1：ゲーム分析 -->
+   <!-- <article class="card" data-tags="game">
+      <div class="date">2026.08.05</div>
+      <h3>『作品名』プレイ分析：ハマる導線設計とUIの改善案</h3>
+      <p>クリアまでプレイした分析記録。テンポの良い育成システムが面白いと感じた反面、UI画面の導線に改善の余地があると感じたため改善案を考察しました。</p>
+      <div>
+        <span class="tag tag-game">ゲーム分析</span>
+        <span class="tag">UI/UX</span>
+      </div>
+    </article>  -->
+
+    <!-- 記事2：note (イベント & ゲーム分析) -->
+    <article class="card" data-tags="note event game">
      <!-- <div class="date">2026.09.25</div>
       <h3><a href="https://note.com/" target="_blank">【レポート】東京ゲームショウ2026に行ってきました！ ↗</a></h3>
-      <p>最新のインディーゲームブースや開発者の展示を見て回った感想・気づきを整理しました。今後のゲーム制作に活かしたいポイントなどをまとめています。</p>
+      <p>最新のインディーゲームブースや開発者の展示を見て回った感想・気づきを整理しました。</p>
       <div>
         <span class="tag tag-note">note</span>
-        <span class="tag">イベント参加</span>
-        <span class="tag">ゲーム開発</span>
-      </div>
-    </article>
--->
-    <!-- 記事2：制作日記のサンプル -->
-    <article class="card">
+        <span class="tag">イベント</span>
+        <span class="tag tag-game">ゲーム分析</span>
+      </div> 
+    </article> -->
+
+    <!-- 記事3：Web制作 -->
+    <article class="card" data-tags="web">
       <div class="date">2026.08.04</div>
       <h3>ポートフォリオサイト「宇佐美ひなのアトリエ」の制作舞台裏</h3>
-      <p>GitHub + Vercel を使って個人ポートフォリオサイトを開設した時の手順やハマったポイントについてのメモです。</p>
+      <p>GitHub + Vercel を使って個人ポートフォリオサイトを開設した時の手順やメモです。</p>
       <div>
         <span class="tag">Web制作</span>
         <span class="tag">Vercel</span>
-        <span class="tag">Git</span>
-      </div>
-    </article>
-
-    <!-- 記事3：今後の更新枠サンプル -->
-    <article class="card">
-      <div class="date">2026.08.00</div>
-      <h3>ゲーム制作進捗ノート #1</h3>
-      <p>（ここに日々のアイデアや制作の進捗、学んだことなどを気軽に書き溜めていけます）</p>
-      <div>
-        <span class="tag">制作日記</span>
       </div>
     </article>
   </main>
@@ -127,6 +168,32 @@
       &copy; 2026 Atelier Hina. All rights reserved.
     </p>
   </footer>
+
+  <!--  絞り込みを動かすJavaScript -->
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('article.card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // すべてのボタンから active クラスを外し、押されたボタンだけに付ける
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        articles.forEach(article => {
+          const tags = article.getAttribute('data-tags').split(' ');
+          
+          if (filterValue === 'all' || tags.includes(filterValue)) {
+            article.style.display = 'block'; // 表示
+          } else {
+            article.style.display = 'none';  // 非表示
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
