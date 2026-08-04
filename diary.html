@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diary & Articles - 宇佐美ひなのアトリエ</title>
+  <style>
+    /* 全ページ共通のデザイン設定 */
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+      --accent-color: #2563eb;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header, main, footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    h1 { margin: 0; font-size: 1.8rem; }
+    h2 {
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    /* 外部サイト（note等）用タグ */
+    .tag-note {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .date {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 0.5rem;
+    }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav a { margin-right: 15px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>宇佐美ひなのアトリエ</h1>
+    <p>ゲーム開発 & 制作の学生</p>
+
+    <!-- メニューバー -->
+    <nav style="margin-top: 1rem;">
+      <a href="index.html">Home</a>
+      <a href="about.html">Profile</a>
+      <a href="works.html">Works</a>
+      <a href="diary.html" style="font-weight: bold;">Diary</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Diary & Articles (日記・記事)</h2>
+    <p style="color: var(--text-sub);">日々の制作記録やイベント参加レポート、noteに書いた記事などをまとめています。</p>
+
+    <!-- 記事1：note記事のサンプル（外部リンク） -->
+    <article class="card">
+      <div class="date">2026.09.25</div>
+      <!--<h3><a href="https://note.com/" target="_blank">【レポート】東京ゲームショウ2026に行ってきました！ ↗</a></h3>
+      <p>最新のインディーゲームブースや開発者の展示を見て回った感想・気づきを整理しました。今後のゲーム制作に活かしたいポイントなどをまとめています。</p>
+      <div>
+        <span class="tag tag-note">note</span>
+        <span class="tag">イベント参加</span>
+        <span class="tag">ゲーム開発</span>
+      </div>
+    </article>
+-->
+    <!-- 記事2：制作日記のサンプル -->
+    <article class="card">
+      <div class="date">2026.08.04</div>
+      <h3>ポートフォリオサイト「宇佐美ひなのアトリエ」の制作舞台裏</h3>
+      <p>GitHub + Vercel を使って個人ポートフォリオサイトを開設した時の手順やハマったポイントについてのメモです。</p>
+      <div>
+        <span class="tag">Web制作</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Git</span>
+      </div>
+    </article>
+
+    <!-- 記事3：今後の更新枠サンプル -->
+    <article class="card">
+      <div class="date">2026.08.00</div>
+      <h3>ゲーム制作進捗ノート #1</h3>
+      <p>（ここに日々のアイデアや制作の進捗、学んだことなどを気軽に書き溜めていけます）</p>
+      <div>
+        <span class="tag">制作日記</span>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p style="text-align: center; color: var(--text-sub); font-size: 0.9rem;">
+      &copy; 2026 Atelier Hina. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
