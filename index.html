@@ -3,30 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>宇佐美の部屋</title>
+  <title>宇佐美ひなのアトリエ</title>
   <style>
+    /* シンプルで清潔感のあるデザイン設定 */
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+      --accent-color: #2563eb;
+    }
     body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
       margin: 0;
-      background-color: #f4f4f9;
+      padding: 0;
     }
+    header, main, footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    h1 { margin: 0; font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 0.3rem; margin-top: 2rem; }
     .card {
-      background: background-color: #000;
-      padding: 2rem;
+      background: var(--card-bg);
+      padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 1rem;
     }
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>わお! 👋</h1>
-    <p>ポートフォリオ作成熱血！</p>
-  </div>
+
+  <header>
+    <h1>宇佐美ひなのアトリエ</h1>
+    <p>ゲーム開発 & 制作の学生</p>
+  </header>
+
+  <main>
+    <!-- 1. 自己紹介 -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>はじめまして！大学で情報系や工学について学んでいます。</p>
+        <p>ゲームやエンタメ系が好きで、日々エンタメの分析や制作に取り組んでいます。</p>
+      </div>
+    </section>
+
+    <!-- 2. 制作物 -->
+    <section id="works">
+      <h2>Works</h2>
+      <div class="card">
+        <h3>個人ポートフォリオサイト（当サイト）</h3>
+        <p>自分の制作物や活動記録をまとめるために作成したポートフォリオサイトです。</p>
+        <div>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Git</span>
+          <span class="tag">Vercel</span>
+        </div>
+        <p><a href="https://github.com/usamihina/Homepage-test" target="_blank">GitHubでソースコードを見る →</a></p>
+      </div>
+    </section>
+
+    <!-- 3. スキル -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Languages:</strong> HTML, CSS, JavaScript (学習中)</li>
+          <li><strong>Tools & Services:</strong> Git, GitHub, VS Code, Vercel , Aviutl2 ,YMM4</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. 連絡先 -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>ご連絡やお問合せは以下からお願いいたします。</p>
+        <ul>
+          <li>GitHub: <a href="https://github.com/usamihina" target="_blank">@usamihina</a></li>
+          <li>X (Twitter): <a href="https://x.com/UsamiH1na" target="_blank">@UsamiH1na</a></li> 
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: center; color: var(--text-sub); font-size: 0.9rem;">
+      &copy; 2026 usamihina. All rights reserved.
+    </p>
+  </footer>
+
 </body>
 </html>
